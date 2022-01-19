@@ -21,7 +21,7 @@ By: Terri John
 
 |Name|Description|
 |---|---|
-|1_cleaning_eda|Cleans and prepares data for modeling. Initial EDA.|
+|1_cleaning_eda|Cleans and prepares data for modeling. Exploratory Data Analysis.|
 |2_modeling|Binary classification model predicting income greater or lesser than $50k.|
 
 ## <a name="problemstatement"></a>Problem Statement and Background
@@ -51,7 +51,7 @@ You have been provided a sample dataset from the US Census archive containing de
 
 You may download this data archive here: https://t.lever-analytics.com/email-link?dest=http%3A%2F%2Fthomasdata.s3.amazonaws.com%2Fds%2Fus_census_full.zip&eid=fa860e43-c512-44d5-a62b-404c8c1f6dcf&idx=3&token=ttkjOcDfJAbkWA9gaGnUF9H2Yto.
 
-Save the data files under the folder: data --> raw
+Save the data files under the folder: data --> raw_data
 
 ##### Please note that the data dictionary is available in the census_income_metadata.txt file.
 
@@ -68,9 +68,14 @@ Save the data files under the folder: data --> raw
 ## <a name="model"></a>Modeling and Analysis
 I created several binary classification models in my process to understand the characteristics that are most decisive regarding whether a person earns more or less than $50,000 annually. While most models did not outperform the null model, I focused on building highly interpretable models. My goal in this project wasn't to build a perfect model - it was to better understand what is happening in our society.
 
-|Model|Null Model|Train Accuracy|Test Accuracy|F1 Score|
+ The model that I felt gave me the strongest understanding of what was happening under the hood was a LogisticRegression model. However, the strongest performing model was a RandomForest model, which gave me a well fit model hovering around 99% accuracy for both training and testing data, and an f1 score of .9.
+
+*The baseline model assumes a 93% accuray score, based on the majority class.
+
+|Model|Train Accuracy|Test Accuracy|Recall|F1 Score|
 |---|---|---|---|---|
-|KNN|74%|82%|82%|72%|
+|LogisticRegression|94.5%|94.5%|0.24|0.35|
+|RandomForest|99.2%|98.9%|0.86|0.90|
 
 
 Developing effective models was made more challenging by the highly unbalanced classes and the significant amount of missing data for some variables.
@@ -81,19 +86,28 @@ Because of the goal of my project, I had to spend some time considering which me
 
 ## <a name="conclusion"></a>Conclusion:
 ### Limitations
+
 * Significant amount of data missing.
 
 
 ### Recommendations for next steps:
 * Bring in more data. For example, bring in data related to country of origin for parents and self country of origin, as well as year of arrival in the United States. We need to build a better understanding of the economic journey taken by new immigrants to the United States.
 
+* Cross compare features.
 
+* Bring in more data to fill 'not in universe' designations.
 
+### Conclusion
 
+Features that were strongest predictors of income included age, veterans benefits, stock dividends, sex, and race and citizenship. I will note that I was heavily focused on societal demographics versus occupation, and that comes out in my results. I do think that further study should be given to a cross examination of demographics with occupation and industry codes, and that would certainly be my next step in this study.
+
+Importantly, this data highlights that strong indicators for income include characteristics that we cannot control for, including race, citizenship, sex, and marital status, among others. The government should take this into consideration and focus on allocating funding in a way that can even out such disparities.
 
 ### <a name="sources"></a>Sources
 
 Data for this project was provided by Dataiku.
 Original data is from the US Census Bureau: http://www.census.gov/ftp/pub/DES/www/welcome.html
+
+* https://www.forbes.com/sites/marisadellatto/2021/10/05/single-adults-make-less-money-than-partnered-ones-study-says/?sh=360d12ad454f
 
 [Return to the top of the page](#top)
