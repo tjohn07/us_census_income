@@ -32,7 +32,7 @@ Every 10 years, the US Census Bureau conducts a survey to count every resident o
 
 ## <a name="planning"></a>Project Planning and Methodology
 
-For this study I began by examining the data and preparing for modeling. At first glance it appeared to be a very complete data set. Closer analysis revealed that many columns were missing 50% or more of values. This is because the US census will fill a blank with ‘Not in universe’ if a question is not asked. For example, I ended up opting not to use state of residence because about 50% of these fields were listed as ‘Not in universe.
+For this study I began by examining the data and preparing for binary classification modeling. At first glance it appeared to be a very complete data set. Closer analysis revealed that many columns were missing 50% or more of values. This is because the US census will fill a blank with ‘Not in universe’ if a question is not asked. For example, I ended up opting not to use state of residence because about 50% of these fields were listed as ‘Not in universe.' Which such a significant number of fields missing, I was unable to reliably impute missing values and opted to remove these features from the dataset for modeling.
 
 Moving onto feature engineering, the data contained several categorical features. For features that could be justified as ordinal in nature, such as level of education, I encoded the features. For features that could be considered to be ordinal, such as race, I used sparse matrices to create a column for each category, with each field containing either a 0 or a 1.
 
@@ -53,6 +53,8 @@ You may download this data archive here: https://t.lever-analytics.com/email-lin
 
 Save the data files under the folder: data --> raw
 
+##### Please note that the data dictionary is available in the census_income_metadata.txt file.
+
 
 ### Project Requirements:   
 
@@ -71,16 +73,18 @@ I created several binary classification models in my process to understand the c
 |KNN|74%|82%|82%|72%|
 
 
-Developing effective models was made more challenging by the highly unbalanced classes, alongside the general difficulties that come along with trying to predict human behavior.
+Developing effective models was made more challenging by the highly unbalanced classes and the significant amount of missing data for some variables.
 
-Because of the goal of my project, I had to spend some time considering which metric I wanted to prioritize - accuracy, precision, recall, or f1. I decided that a balance was key, but with a focus on minimizing false positives. Because I think it is more important to understand reasons for earning under $50k, I want to make sure that I'm not classifying under-earners as over-earners.
+Because of the goal of my project, I had to spend some time considering which metric I wanted to prioritize - accuracy, precision, recall, or f1 score. I decided that a balance was key, but with a focus on minimizing false positives. Because I think it is more important to understand reasons for earning under $50k, I want to make sure that I'm not classifying under-earners as over-earners.
 
 
 ## <a name="conclusion"></a>Conclusion:
-### Limitations and
+### Limitations
+* Significant amount of data missing.
 
 
 ### Recommendations for next steps:
+* Bring in more data. For example, bring in data related to country of origin for parents and self country of origin, as well as year of arrival in the United States. We need to build a better understanding of the journey taken by new immigrants to the United States. 
 
 
 
