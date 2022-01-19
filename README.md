@@ -84,10 +84,13 @@ Because of the goal of my project, I had to spend some time considering which me
 
 
 ### Recommendations for next steps:
-* Bring in more data. For example, bring in data related to country of origin for parents and self country of origin, as well as year of arrival in the United States. We need to build a better understanding of the journey taken by new immigrants to the United States. 
+* Bring in more data. For example, bring in data related to country of origin for parents and self country of origin, as well as year of arrival in the United States. We need to build a better understanding of the journey taken by new immigrants to the United States.
 
 
 
 
 
 ### <a name="sources"></a>Sources
+
+Data for this project was provided by Dataiku.
+Origin data is from the US Census Burea: http://www.census.gov/ftp/pub/DES/www/welcome.html
