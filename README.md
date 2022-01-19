@@ -5,7 +5,7 @@
 By: Terri John
 
 
-This ReadMe contains:
+<a name="top"></a>This ReadMe contains:
 
 * [Project Contents](#contents)
 * [Problem Statement](#problemstatement)
@@ -55,7 +55,7 @@ Save the data files under the folder: data --> raw
 
 ##### Please note that the data dictionary is available in the census_income_metadata.txt file.
 
-
+[Return to the top of the page](#top)
 ### Project Requirements:   
 
 * scikit-learn==1.0.1
@@ -77,6 +77,7 @@ Developing effective models was made more challenging by the highly unbalanced c
 
 Because of the goal of my project, I had to spend some time considering which metric I wanted to prioritize - accuracy, precision, recall, or f1 score. I decided that a balance was key, but with a focus on minimizing false positives. Because I think it is more important to understand reasons for earning under $50k, I want to make sure that I'm not classifying under-earners as over-earners.
 
+[Return to the top of the page](#top)
 
 ## <a name="conclusion"></a>Conclusion:
 ### Limitations
@@ -94,3 +95,5 @@ Because of the goal of my project, I had to spend some time considering which me
 
 Data for this project was provided by Dataiku.
 Original data is from the US Census Bureau: http://www.census.gov/ftp/pub/DES/www/welcome.html
+
+[Return to the top of the page](#top)
