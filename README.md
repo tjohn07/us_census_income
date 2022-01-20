@@ -32,7 +32,7 @@ Every 10 years, the US Census Bureau conducts a survey to count every resident o
 
 ## <a name="planning"></a>Project Planning and Methodology
 
-For this study I began by examining the data and preparing for binary classification modeling. At first glance it appeared to be a very complete data set. Closer analysis revealed that many columns were missing 50% or more of values. This is because the US census will fill a blank with ‘Not in universe’ if a question is not asked. For example, I ended up opting not to use state of residence because about 50% of these fields were listed as ‘Not in universe.' Which such a significant number of fields missing, I was unable to reliably impute missing values and opted to remove these features from the dataset for modeling.
+For this study I began by examining the data and preparing for binary classification modeling. At first glance it appeared to be a very complete data set. Closer analysis revealed that many columns were missing 50% or more of values. This is because the US census will fill a blank with ‘Not in universe’ if a question is not asked. For example, I ended up opting not to use state of residence because about 50% of these fields were listed as ‘Not in universe.' With such a significant number of fields missing, I was unable to reliably impute missing values and opted to remove these features from the dataset for modeling.
 
 Moving onto feature engineering, the data contained several categorical features. For features that could be justified as ordinal in nature, such as level of education, I encoded the features. For features that could be considered to be ordinal, such as race, I used sparse matrices to create a column for each category, with each field containing either a 0 or a 1.
 
@@ -70,7 +70,7 @@ I created several binary classification models in my process to understand the c
 
  The model that I felt gave me the strongest understanding of what was happening under the hood was a LogisticRegression model. However, the strongest performing model was a RandomForest model, which gave me a well fit model hovering around 99% accuracy for both training and testing data, and an f1 score of .9.
 
-*The baseline model assumes a 93% accuray score, based on the majority class.
+*The baseline model assumes a 93% accuracy score, based on the majority class.
 
 |Model|Train Accuracy|Test Accuracy|Recall|F1 Score|
 |---|---|---|---|---|
